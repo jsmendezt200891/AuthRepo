@@ -7,9 +7,10 @@ export class AuthService {
         private readonly jwtService: JwtService,
       ) { }
 
-    public getTokenorUser(name :string){
+    public getTokenorUser(name :string,pass:string){
+        const date = new Date(Date.now()).toLocaleString();
         return this.jwtService.sign({
-            username:name
+            username:name+pass+date
         })
     }
 }
