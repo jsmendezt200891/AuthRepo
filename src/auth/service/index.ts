@@ -7,10 +7,9 @@ export class AuthService {
         private readonly jwtService: JwtService,
       ) { }
 
-    public getTokenorUser(){
+    public getTokenorUser(name :string){
         return this.jwtService.sign({
-            username:"test",
-            sub:1
+            username:name
         })
     }
 }
