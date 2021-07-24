@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AuthController } from '../controllers';
-import { AuthService } from '../service';
+import { AuthController } from '../controllers/AuthController';
+import { AuthService } from '../service/AuthService';
 import { JwtModule } from '@nestjs/jwt';
 
 @Module({
@@ -9,7 +9,7 @@ import { JwtModule } from '@nestjs/jwt';
     useFactory: () => ({
       secret:"Secret123",
       signOptions:{
-        expiresIn:'60m'
+        expiresIn:'60s'
       }
     })
   })
