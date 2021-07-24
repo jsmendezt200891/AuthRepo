@@ -17,7 +17,6 @@ export class AuthController {
         let message = input.Authorization;
 
         const acces = this.authService.validateTokenUSer(input);
-        console.log(acces);
         if (acces)
             message = "Expired or incorrect token";
 

@@ -1,8 +1,6 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { Connection, createConnection } from 'typeorm';
 import { AppModule } from './app.module';
-import { DataBaseEventDto } from 'src/database/dto/DataBaseEventDto';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
