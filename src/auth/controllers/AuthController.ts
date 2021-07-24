@@ -6,23 +6,25 @@ import { AuthEventValidateDto } from "../dto/AuthEventValidateDto";
 @Controller('auth')
 export class AuthController {
     constructor(
-        private readonly authService: AuthService
+        private readonly authService: AuthService,
+   
+
     ) { }
 
     @Get('validate')
     async ValidateToken(@Body() input: AuthEventValidateDto) {
 
-        let message=input.Authorization;
-        
+        let message = input.Authorization;
+
         const acces = this.authService.validateTokenUSer(input);
         console.log(acces);
-        if (acces)  
-            message ="Expired or incorrect token";
+        if (acces)
+            message = "Expired or incorrect token";
 
         return await {
-                status: acces,
-                message:message
-            }
+            status: acces,
+            message: message
+        }
 
     }
 
